@@ -3,7 +3,7 @@
 // Track multiple plotSheets per page for global updating, such as window resizing
 var plotSheets = Array();
 
-//
+// Global limits for page
 var plot = {
     count: 0,
     min: null,
@@ -445,9 +445,25 @@ function plotSheet(canvasId) {
 
     // Auto-fill the saveDesign form, which submits canvas image data to server, which sets proper header and pushes image data to user for automatic download
     this.savePlot = function () {
-        document.saveDesign.data.value = this.canvas.toDataURL("image/png");
-        document.saveDesign.submit();
-        document.saveDesign.data.value = null;
+
+        if(document.phasePlotSaveForm==undefined){
+            var form = document.createElement("form");
+            form.setAttribute("method", "post"););
+            form.setAttribute("name", "phasePlotSaveForm");
+            form.setAttribute("action", this.config.savePlotPath);
+
+            var data = document.createElement("input");
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", "data");
+            hiddenField.setAttribute("value", this.canvas.toDataURL("image/png"));
+            form.appendChild(hiddenField);
+
+            document.body.appendChild(form);
+        }
+
+        document.phasePlotSaveForm.submit();
+        document.phasePlotSaveForm.data.value = null;
+
     }
 
     // Adds a temperature map to the diagram
