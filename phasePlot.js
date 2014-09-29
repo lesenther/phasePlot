@@ -88,8 +88,8 @@ function plotSheet(canvasId) {
 
     // Process
     this.processData = function () {
-        if (document.getElementById(this.dataSourceId).value == '') { // TODO:  jQuery is not necessary, remove
-            console.log('Failed to process data:  Data Source is empty!');
+        if (document.getElementById(this.dataSourceId).value == '') {
+            this.writeMessage('Failed to process data:  Data Source is empty!');
             return false;
         } else {
             var jsonData = document.getElementById(this.dataSourceId).value;
@@ -104,7 +104,7 @@ function plotSheet(canvasId) {
             this.totalPlots = plotData.plots.length;
 
             if (this.totalPoints == 0) { // Server can return an empty dataset, deal with it
-                console.log('Failed to process data:  No plots found!');
+                this.writeMessage('Failed to process data:  No plots found!');
                 return false;
             }
 
@@ -176,7 +176,7 @@ function plotSheet(canvasId) {
             x = this.config.originOffset[0] + this.config.gridPadding + sideSpace + width * coord2,
             y = this.config.originOffset[1] + this.config.gridPadding + headerSpace + height * (1 - coord1);
         } else {
-            console.log("Error: Could not complete plotPoint - Plot type not supported (" + this.plotType + ")");
+            this.writeMessage("Error: Could not complete plotPoint - Plot type not supported (" + this.plotType + ")");
             return;
         }
 
@@ -323,7 +323,7 @@ function plotSheet(canvasId) {
             this.ctx.lineTo(originOffset[0] + padding + sideSpace - edge, originOffset[1] + padding + headerSpace - edge);
             this.ctx.stroke();
         } else {
-            console.log("Error: Could not complete drawGrid - Plot type not supported (" + this.plotType + ")");
+            this.writeMessage("Error: Could not complete drawGrid - Plot type not supported (" + this.plotType + ")");
             return;
         }
 
@@ -425,7 +425,7 @@ function plotSheet(canvasId) {
             this.ctx.stroke();
             this.ctx.restore();
         } else {
-            console.log("Error: Could not complete drawGrid - Plot type not supported (" + this.plotType + ")");
+            this.writeMessage("Error: Could not complete drawGrid - Plot type not supported (" + this.plotType + ")");
             return;
         }
     }
