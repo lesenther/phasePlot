@@ -12,7 +12,10 @@
 
   </textarea>
 
-Data to generate plots is computed on the backend by our server and either automatically or manually entered into a textarea for processing.  Here's an example:
+Data to generate plots is computed on the backend by our server and either automatically or manually entered into a textarea for processing.
+
+See example_data.js or example_data2.js
+
 
   plotData={
     'plot_type':3,
