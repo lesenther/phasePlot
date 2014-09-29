@@ -24,15 +24,18 @@ See example_data.js or example_data2.js
 ### Create canvas element
 
 ```html
-<canvas id="myCanvas" ondblclick="myPlotSheet.savePlot();"></canvas>
+<canvas id="myCanvas"></canvas>
 ```
 
 ### Javascript to initialize plot:
 
 ```html
 <script>
-  var myPlotSheet=new plotSheet('myCanvas');
-  myPlotSheet.init({dataId:'myData',tempMap:1});
+
+  var myPlotSheet = new plotSheet('myCanvas');
+
+  myPlotSheet.init({dataId:'myData', tempMap:true});
+
 </script>
 ```
 
