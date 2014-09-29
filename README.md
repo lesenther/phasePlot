@@ -31,7 +31,10 @@ See example_data.js or example_data2.js
 
 ```javascript
 var myPlotSheet = new plotSheet('myCanvas');
-myPlotSheet.init({dataId:'myData', tempMap:true});
+myPlotSheet.init({
+  dataId:'myData',
+  tempMap:true
+});
 ```
 
 ## Configuration
