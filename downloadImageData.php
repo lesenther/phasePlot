@@ -8,7 +8,7 @@
 $data = (
   isset($_POST['data'])
     &&
-  $_POST['data']!=''
+  ($_POST['data']!='')
 )
   ? $_POST['data']
   : null;
@@ -18,12 +18,12 @@ if($data!=null){
   $filename = (
     isset($_POST['filename'])
       &&
-    $_POST['filename']!=''
+    ($_POST['filename']!='')
   )
     ? $_POST['filename']
     : "phasePlot-".date("Y-m-d_H-i-s");
 
-  $uri = substr($data,strpos($data,",")+1);
+  $uri = substr($data, strpos($data, ",") + 1);
 
   header("Pragma: public");
   header("Expires: 0");
@@ -37,6 +37,6 @@ if($data!=null){
 
 }else{
 
-  die("Bad request");
+  echo "Bad request";
 
 }
