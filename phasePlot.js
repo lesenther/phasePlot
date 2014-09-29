@@ -448,7 +448,7 @@ function plotSheet(canvasId) {
 
         if(document.phasePlotSaveForm==undefined){
             var form = document.createElement("form");
-            form.setAttribute("method", "post"););
+            form.setAttribute("method", "post");
             form.setAttribute("name", "phasePlotSaveForm");
             form.setAttribute("action", this.config.savePlotPath);
 
