@@ -110,7 +110,7 @@ function plotSheet(canvasId) {
             return false;
         } else {
             var jsonData = document.getElementById(this.dataSourceId).value;
-            eval(jsonData);
+            eval("plotData="+jsonData);
             if (plotData.error) { // If server throws this flag, print message and quit
                 this.writeMessage(plotData.error);
                 return false;

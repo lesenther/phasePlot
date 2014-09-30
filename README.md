@@ -17,16 +17,18 @@ Canvas element
 Textarea with plotting data:
 ```html
 <textarea id="myData">
+  {}
 </textarea>
 ```
 Data to generate plots is computed on the backend by our server and either automatically or manually entered into a textarea for processing.  See example_data.js or example_data2.js.
 
 Javascript to initialize plot:
 ```javascript
-var myPlotSheet = new plotSheet('myCanvas');
+var myPlotSheet = new plotSheet("myCanvas");
+
 myPlotSheet.init({
-  dataId:'myData',
-  tempMap:true
+  dataId: "myData",
+  tempMap: true
 });
 ```
 
