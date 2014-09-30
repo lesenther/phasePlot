@@ -94,8 +94,8 @@ function plotSheet(canvasId) {
         } else {
             var jsonData = document.getElementById(this.dataSourceId).value;
             eval(jsonData);
-            if (plotData.unsupported == true) { // If server throws this flag, print message and quit
-                this.writeMessage("Unsupported Geometry.");
+            if (plotData.error) { // If server throws this flag, print message and quit
+                this.writeMessage(plotData.error);
                 return false;
             }
 
@@ -176,7 +176,7 @@ function plotSheet(canvasId) {
             x = this.config.originOffset[0] + this.config.gridPadding + sideSpace + width * coord2,
             y = this.config.originOffset[1] + this.config.gridPadding + headerSpace + height * (1 - coord1);
         } else {
-            this.writeMessage("Error: Could not complete plotPoint - Plot type not supported (" + this.plotType + ")");
+            this.writeMessage("PlotPoint Error: Plot type not supported (" + this.plotType + ")");
             return;
         }
 
@@ -334,7 +334,7 @@ function plotSheet(canvasId) {
             this.ctx.lineTo(originOffset[0] + padding + sideSpace - edge, originOffset[1] + padding + headerSpace - edge);
             this.ctx.stroke();
         } else {
-            this.writeMessage("Error: Could not complete drawGrid - Plot type not supported (" + this.plotType + ")");
+            this.writeMessage("DrawGrid Error: Plot type not supported (" + this.plotType + ")");
             return;
         }
 
@@ -436,7 +436,7 @@ function plotSheet(canvasId) {
             this.ctx.stroke();
             this.ctx.restore();
         } else {
-            this.writeMessage("Error: Could not complete drawGrid - Plot type not supported (" + this.plotType + ")");
+            this.writeMessage("DrawGrid Error: Plot type not supported (" + this.plotType + ")");
             return;
         }
     }
