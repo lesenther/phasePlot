@@ -1,6 +1,6 @@
 # phasePlot
 
-[Live Preview](http://htmlpreview.github.io/?https://raw.githubusercontent.com/lesenther/phasePlot/master/example.html)
+[Live Demo](http://htmlpreview.github.io/?https://raw.githubusercontent.com/lesenther/phasePlot/master/example.html)
 
 ## Setup
 
