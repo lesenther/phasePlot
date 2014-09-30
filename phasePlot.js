@@ -1,6 +1,7 @@
 /* phasePlot */
 
-// Track multiple plotSheets per page for global updating, such as window resizing
+// Track all the plotSheets on the DOM for global updating such as window
+// resizing, updates to the configuration, or changes in the data source.
 var plotSheets = Array();
 
 // Global limits for page
@@ -17,18 +18,34 @@ window.onload = window.onresize = function () {
     }
 }
 
-// Proper update
+// Update all the sheets in the DOM
 function updatePlotSheets() {
     for (var plotSheet in plotSheets) {
         plot.count++;
         plotSheets[plotSheet].updateConfig();
         plotSheets[plotSheet].plotPoints();
-        plot.min = parseInt((plot.min > plotSheets[plotSheet].min || plot.min === null) ? plotSheets[plotSheet].min : plot.min);
-        plot.max = parseInt((plot.max < plotSheets[plotSheet].max || plot.max === null) ? plotSheets[plotSheet].max : plot.max);
+        plot.min = parseInt(
+            (
+                (plot.min > plotSheets[plotSheet].min)
+                    ||
+                (plot.min === null)
+            )
+                ? plotSheets[plotSheet].min
+                : plot.min
+        );
+        plot.max = parseInt(
+            (
+                (plot.max < plotSheets[plotSheet].max)
+                    ||
+                (plot.max === null)
+            )
+                ? plotSheets[plotSheet].max
+                : plot.max
+        );
     }
 }
 
-// Object
+// Primary plotSheet Object
 function plotSheet(canvasId) {
 
     // Add sheet to page array
@@ -99,12 +116,12 @@ function plotSheet(canvasId) {
                 return false;
             }
 
-            this.plotType = plotData.plot_type; // 3 for a ternery diagram, 4 for quaternary diagram - TODO: Check and confirm
+            this.plotType = plotData.plot_type; // 3 for a ternery diagram, 4 for quaternary diagram
 
             this.totalPlots = plotData.plots.length;
 
             if (this.totalPoints == 0) { // Server can return an empty dataset, deal with it
-                this.writeMessage('Failed to process data:  No plots found!');
+                this.writeMessage('ProcessData Error:  No plots found!');
                 return false;
             }
 
@@ -190,7 +207,6 @@ function plotSheet(canvasId) {
         this.ctx.arc(x, y, this.config.dotSize, 0, Math.PI * 2, true);
         this.ctx.fill();
         this.ctx.font = "normal 7px Tahoma";
-         // TODO: Should this be a user config setting?
 
         if (this.config.dotNumbers) {
             this.ctx.fillStyle = '#666';
