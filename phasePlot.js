@@ -251,11 +251,22 @@ function plotSheet(canvasId) {
             ubound = Math.ceil(this.config.tempMax),
             range = ubound - lbound,
             scale, rgb;
-        if (temp == 'melt') return 'rgba(249,132,229,1)';
-        if (temp == 'nomelt') return 'rgba(0,0,0,1)';
-        if ((temp == null || temp == 0 || temp == '0') && this.tempMap == false) return this.config.dotColor;
-        if ((temp == null || temp == 0 || temp == '0') && this.tempMap == true) return 'rgba(0,0,0,0)';
-        if (temp < lbound || temp > ubound) return (temp < lbound) ? 'rgba(0,0,200,' + opacity + ')' : 'rgba(200,0,0,' + opacity + ')';
+
+        // Special cases for melt and nomelt keywords
+        if (temp == "melt") return "rgba(249,132,229,1)";
+        if (temp == "nomelt") return "rgba(0,0,0,1)";
+
+        // Default dot color for empty
+        if (temp == null || temp == "")
+            return (this.tempMap)
+                    ? this.config.dotColor
+                    : "rgba(0,0,0,0.8)";
+
+        // Detect out of bounds datapoints
+        if (temp < lbound || temp > ubound)
+            return (temp < lbound)
+                    ? "rgba(0,0,200," + opacity + ")"
+                    : "rgba(200,0,0," + opacity + ")";
         if (temp <= (lbound + .25 * range)) {
             scale = (lbound + .25 * range - temp) / (.25 * range);
             rgb = 255 - Math.round(scale * 255);
