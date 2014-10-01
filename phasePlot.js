@@ -53,12 +53,12 @@ function plotSheet(canvasId) {
 
     // Default config settings specific to each plot
     this.config = {
-        gridSize: 220,
+        gridSize: 320,
         gridPadding: 10,
         boundingBox: false,
         originOffset: [0, 0],
         tempMin: 200,
-        tempMax: 400,
+        tempMax: 500,
         dotSize: 2,
         dotOpacity: 1,
         dotColor: '#000000',
