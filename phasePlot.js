@@ -61,14 +61,14 @@ function plotSheet(canvasId) {
         tempMax: 500,
         dotSize: 2,
         dotOpacity: 1,
-        dotColor: '#000000',
+        dotColor: "rgba(0,0,0,0.6)",
         dotNumbers: false
     }
 
     // Default plotSheet settings
     this.canvasId = canvasId;
     this.canvas = document.getElementById(this.canvasId);
-    this.ctx = this.canvas.getContext('2d');
+    this.ctx = this.canvas.getContext("2d");
     this.plotOrdinates = Array();
     this.plotIndex = 1;
     this.totalPlots = null;
@@ -99,7 +99,9 @@ function plotSheet(canvasId) {
 
     // Show Plot Configuration dialog when user right clicks on canvas object
     this.canvas.oncontextmenu = function () {
-        toggleDialog('plotConfiguration');
+        //toggleDialog('plotConfiguration');
+
+        // TODO: Embed configuration pane into function
         return false;
     }
 
