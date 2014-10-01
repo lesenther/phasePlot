@@ -3,6 +3,7 @@
 ## Live Demos
   * [Ternary Diagram](http://htmlpreview.github.io/?https://raw.githubusercontent.com/lesenther/phasePlot/master/example.html)
   * [Quaternary Diagram](http://htmlpreview.github.io/?https://raw.githubusercontent.com/lesenther/phasePlot/master/example2.html)
+
 ## Setup
 
 Link to script:
