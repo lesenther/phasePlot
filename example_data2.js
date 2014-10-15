@@ -3,7 +3,7 @@
   "axes_labels":["Aa","Bb","Cc","Dd"],
   "plots":[{
     "caption":"Plot 1",
-    "points":[
+    "data":[
       [0.1,0.2,200],
       [0.2,0.3,233],
       [0.3,0.4,266],
@@ -11,7 +11,7 @@
     ]
   },{
     "caption":"Plot 2",
-    "points":[
+    "data":[
       [0.1,0.2,325],
       [0.2,0.3,350],
       [0.3,0.4,375],
@@ -19,7 +19,7 @@
     ]
   },{
     "caption":"Plot 3",
-    "points":[
+    "data":[
       [0,0,200],
       [0,1,300],
       [1,0,400],
@@ -27,47 +27,47 @@
     ]
   },{
     "caption":"Plot 4",
-    "points":[
+    "data":[
       [0.5,0.5,null]
     ]
   },{
     "caption":"Plot 5",
-    "points":[
+    "data":[
       [0.5,0.5,null]
     ]
   },{
     "caption":"Plot 6",
-    "points":[
+    "data":[
       [0.5,0.5,null]
     ]
   },{
     "caption":"Plot 7",
-    "points":[
+    "data":[
       [0.5,0.5,null]
     ]
   },{
     "caption":"Plot 8",
-    "points":[
+    "data":[
       [0.5,0.5,null]
     ]
   },{
     "caption":"Plot 9",
-    "points":[
+    "data":[
       [0.5,0.5,null]
     ]
   },{
     "caption":"Plot 10",
-    "points":[
+    "data":[
       [0.5,0.5,null]
     ]
   },{
     "caption":"Plot 11",
-    "points":[
+    "data":[
       [0.5,0.5,null]
     ]
   },{
     "caption":"Plot 12",
-    "points":[
+    "data":[
       [0.5,0.5,null]
     ]
   }]

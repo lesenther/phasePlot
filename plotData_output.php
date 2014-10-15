@@ -6,7 +6,7 @@ $plotData = array(
   "plots" => array(
     array(
       "caption" => "Plot 1",
-      "points" => array(
+      "data" => array(
         array(0.1, 0.2, 300),
         array(0.2, 0.3, 400),
         array(0.3, 0.4, 500),

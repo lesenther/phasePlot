@@ -238,8 +238,8 @@ function plotSheet(canvasId) {
             }
             var axe_offset=(plotData.plots[plot].axeOffset)?plotData.plots[plot].axeOffset:0;
             this.drawGrid(plotData.axes_labels, plotData.plots[plot].caption,axe_offset);
-            for (var dataPoint in plotData.plots[plot].points)
-            this.plotPoint(plotData.plots[plot].points[dataPoint]);
+            for (var dataPoint in plotData.plots[plot].data)
+            this.plotPoint(plotData.plots[plot].data[dataPoint]);
             this.nextPlot();
         }
         if (this.tempMap) this.addTemperatureMap();

@@ -3,7 +3,7 @@
   "axes_labels":["Na","K","Li"],
   "plots":[{
     "caption":"Experiment Design",
-    "points":[
+    "data":[
       [0.11,0.476,null],
       [0.11,0.507,null],
       [0.11,0.537,null],
@@ -155,7 +155,7 @@
       [0.51,0.353,null]]
   },{
     "caption":"Results",
-    "points":[
+    "data":[
       [0.29,0.28,314],
       [0.29,0.29,336],
       [0.3,0.27,356],
