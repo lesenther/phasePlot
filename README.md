@@ -28,7 +28,7 @@ myPlotSheet.init({
 ```
 
 ## Plot Data
-Data to create the plot is in JSON format.  Here's an example:
+Data to create the plot is in JSON format and should get put into the textarea container.  Here's an example:
 
 ```javascript
 {
@@ -42,40 +42,20 @@ Data to create the plot is in JSON format.  Here's an example:
     {
       "caption": "Plot 1",
       "data": {
-        [0.5, 0.5, 300]
-        //
+        [
+          0.5, // First param indicates the ratio of the first component,
+          0.5, // Second param is the ratio of the second component, (Third component ratio is deduced from these two ratios)
+          300  // Third param is temperature of the phase transition
+        ],
+        [0,0,null] // Many datapoints can be charted onto a single plot
+
       }
     }
+
+   // Additional plots can be added on a single sheet
 
   ]
 }
 ```
 
-$plotData = array(
-  "plot_type" => 4,
-  "axes_labels" => array("Aa","Bb","Cc","Dd"),
-  "plots" => array(
-    array(
-      "caption" => "Plot 1",
-      "data" => array(
-        array(0.1, 0.2, 300),
-        array(0.2, 0.3, 400),
-        array(0.3, 0.4, 500),
-        array(0.4, 0.5, 600),
-      )
-    ),
-    array(
-      "caption" => "Plot 2",
-      "data" => array(
-        array(0.1, 0.2, 700),
-        array(0.2, 0.3, 800),
-        array(0.3, 0.4, 900),
-        array(0.4, 0.5, 1000),
-      )
-    )
-  )
-);
-
-echo json_encode($plotData);
-
-Data to generate plots is computed on the backend by our server and either automatically or manually entered into a textarea for processing.  See example_data.js or example_data2.js.
+See example_data.js or example_data2.js.
