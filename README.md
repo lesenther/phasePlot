@@ -58,4 +58,4 @@ Data to create the plot is in JSON format and should get put into the textarea c
 }
 ```
 
-See example_data.js or example_data2.js.
+See example_data.json or example_data2.json.
